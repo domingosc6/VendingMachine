@@ -8,18 +8,22 @@ class UsersController < ApiController
     
     def profile 
         user = User.find_by_auth_token!(request.headers[:token])
-        render json: {user: {username: user.username, email: user.email, name: user.name}}
+        render_json_profile(user)
     end
 
-    def delete
-        user = User.find_by_auth_token!(request.headers[:token])
-        user.
+    def update
+        user = User.update!(user_params)
+        render_json_profile(user)
     end
     
     private
     
     def user_params
         params.require(:user).permit(:username, :password, :name, :email)
+    end
+
+    def render_json_profile(user)
+        render json: {user: {username: user.username, email: user.email, name: user.name}}
     end
     
 end

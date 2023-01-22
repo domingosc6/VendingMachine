@@ -1,10 +1,10 @@
 class CreateProducts < ActiveRecord::Migration[7.0]
   def change
     create_table :products do |t|
-      t.string :productName
-      t.integer :amountAvailable
+      t.string :product_name
+      t.integer :amount_available
       t.decimal :cost
-      t.integer :sellerId
+      t.integer :seller_id
 
       t.timestamps
     end
