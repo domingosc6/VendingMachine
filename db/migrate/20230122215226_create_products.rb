@@ -3,8 +3,8 @@ class CreateProducts < ActiveRecord::Migration[7.0]
     create_table :products do |t|
       t.string :product_name
       t.integer :amount_available
-      t.decimal :cost
-      t.integer :seller_id
+      t.integer :cost
+      t.integer :seller_id, foreign_key: { to_table: :users }
 
       t.timestamps
     end

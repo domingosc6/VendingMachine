@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_215226) do
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.integer "amount_available"
-    t.decimal "cost"
+    t.integer "cost"
     t.integer "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,11 +28,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_215226) do
     t.string "password_digest"
     t.string "email"
     t.string "name"
+    t.integer "role"
+    t.integer "deposit"
     t.string "auth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "deposit"
-    t.string "role"
   end
 
 end

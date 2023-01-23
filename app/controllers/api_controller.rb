@@ -14,6 +14,11 @@ class ApiController < ApplicationController
         errors = { errors: [detail: message] }
         render json: errors, status: :unauthorized
     end
+
+    def render_error(message)
+        errors = { errors: [detail: message] }
+        render json: errors, status: :bad_request
+    end
     
     private
     

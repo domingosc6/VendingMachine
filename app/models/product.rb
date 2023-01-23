@@ -1,14 +1,9 @@
 class Product < ApplicationRecord
-    validate :cost_is_multiple_of_five
-    validates_numericality_of :amount, greater_than: 0
-    validates_numericality_of :cost, greater_than: 5
-    
-    private
+    include CostValidation
 
-    def cost_is_multiple_of_five
-        unless (cost % 5) == 0
-            errors.add(:cost, "must be multiple of 5 cents")
-        end
-    end
+    validate -> { validate_multipleness(value: self.cost, multiple: 5, variable: :cost) }
+    validates_numericality_of :amount_available, greater_than_or_equal_to: 0
+    validates_numericality_of :cost, greater_than_or_equal_to: 5
+    belongs_to :user, foreign_key: :seller_id
 
 end

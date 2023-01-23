@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show update destroy ]
+  before_action :check_role_from_user, only: :create
+  before_action :check_user, only: %i[ update destroy ]
 
   def index
     @products = Product.all
@@ -29,14 +31,18 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
   end
+  
+  def buy 
+        
+  end
 
   private
   
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    def product_params
-      params.fetch(:product, {})
-    end
+  def product_params
+    params.require(:product).permit(:product_name, :amount_available, :cost)
+  end
 end
