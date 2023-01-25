@@ -24,6 +24,7 @@ class ApiController < ApplicationController
     
     def authenticate_token
         authenticate_with_http_token do |token, options|
+            debugger
             User.find_by(auth_token: token)
         end
     end

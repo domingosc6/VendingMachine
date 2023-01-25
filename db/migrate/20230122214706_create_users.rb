@@ -5,8 +5,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :password_digest
       t.string :email
       t.string :name
-      t.integer :role
-      t.integer :deposit
+      t.integer :role, default: 1
+      t.integer :deposit, default: 0
       t.string :auth_token
 
       t.timestamps

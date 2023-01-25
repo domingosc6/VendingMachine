@@ -17,8 +17,15 @@ class User < ApplicationRecord
     def self.validate_login(username, password)
         user = find_by(username: username)
         
-        if user && user.authenticate(password)
-            user
+        if user
+            if user.auth_token.nil?
+                if user.authenticate(password)
+                    user
+                end
+            else
+                user.errors.add(:auth_token, 'Login already made for this user, please clear all your logouts.')
+                user
+            end
         end
     
     end
