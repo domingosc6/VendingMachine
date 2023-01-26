@@ -1721,3 +1721,1986 @@ Processing by SessionsController#destroy as */*
 Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 338)
 
 
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:21:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 10.9ms | Allocations: 10206)
+
+
+  
+NameError (undefined local variable or method `user' for #<User id: 1, username: "mingos", password_digest: [FILTERED], email: "mingos@mail.com", name: "Domingos", role: "buyer", deposit: 0, auth_token: nil, created_at: "2023-01-25 01:32:02.159099000 +0000", updated_at: "2023-01-25 02:24:48.537596000 +0000">):
+  
+app/models/user.rb:18:in `validate_login'
+app/controllers/sessions_controller.rb:30:in `get_user'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:22:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 5.2ms | Allocations: 10201)
+
+
+  
+NameError (undefined local variable or method `user' for #<User id: 1, username: "mingos", password_digest: [FILTERED], email: "mingos@mail.com", name: "Domingos", role: "buyer", deposit: 0, auth_token: nil, created_at: "2023-01-25 01:32:02.159099000 +0000", updated_at: "2023-01-25 02:24:48.537596000 +0000">):
+  
+app/models/user.rb:18:in `validate_login'
+app/controllers/sessions_controller.rb:30:in `get_user'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:22:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 5.0ms | Allocations: 10021)
+
+
+  
+NameError (undefined local variable or method `user' for #<SessionsController:0x00000000007440>):
+  
+app/controllers/sessions_controller.rb:17:in `destroy'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:23:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 200 OK in 218ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 10167)
+
+
+Started POST "/login" for ::1 at 2023-01-25 18:23:53 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (2.7ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "BTkfVcdeJWPb9LU7h7SUMC6w"], ["updated_at", "2023-01-25 18:23:53.291644"], ["id", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 201ms (Views: 0.1ms | ActiveRecord: 4.5ms | Allocations: 1878)
+
+
+Started POST "/login" for ::1 at 2023-01-25 18:24:06 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 287)
+
+
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:24:22 +0000
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 1]]
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 3.2ms | Allocations: 4652)
+
+
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:24:23 +0000
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 200 OK in 193ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 255)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/users" for ::1 at 2023-01-25 18:31:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"mingos", "password"=>"[FILTERED]", "email"=>"mingos@mail.com", "name"=>"Domingos", "role"=>"buyer"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mingos@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 239ms (ActiveRecord: 8.6ms | Allocations: 11264)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username has already been taken, Email has already been taken):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2023-01-25 18:32:11 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"mingos1", "password"=>"[FILTERED]", "email"=>"mingos@mail.com", "name"=>"Domingos", "role"=>"buyer"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mingos@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 191ms (ActiveRecord: 0.7ms | Allocations: 1116)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2023-01-25 18:32:17 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"mingos", "password"=>"[FILTERED]", "email"=>"mingos1@mail.com", "name"=>"Domingos", "role"=>"buyer"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mingos1@mail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 193ms (ActiveRecord: 0.7ms | Allocations: 1115)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Username has already been taken):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/users" for ::1 at 2023-01-25 18:32:24 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"mingos1", "password"=>"[FILTERED]", "email"=>"mingos1@mail.com", "name"=>"Domingos", "role"=>"buyer"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos1"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mingos1@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "mingos1"], ["password_digest", "[FILTERED]"], ["email", "mingos1@mail.com"], ["name", "Domingos"], ["auth_token", "B9UazMJkkavMKVotZgh93h3K"], ["created_at", "2023-01-25 18:32:24.476546"], ["updated_at", "2023-01-25 18:32:24.476546"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 197ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 1646)
+
+
+Started POST "/users" for ::1 at 2023-01-25 18:32:34 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"mingos2", "password"=>"[FILTERED]", "email"=>"mingos1ma1il.com", "name"=>"Domingos", "role"=>"buyer"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos2"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mingos1ma1il.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 192ms (ActiveRecord: 0.7ms | Allocations: 1167)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email is invalid):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2023-01-25 18:33:38 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "scMfjKKS3LSNmhinbaxRK4ss"], ["updated_at", "2023-01-25 18:33:38.863967"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 197ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 1633)
+
+
+Started POST "/login" for ::1 at 2023-01-25 18:33:46 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos1", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos1"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 264)
+
+
+Started DELETE "/logout/all" for ::1 at 2023-01-25 18:33:50 +0000
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 354)
+
+
+Started POST "/login" for ::1 at 2023-01-25 18:33:58 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["updated_at", "2023-01-25 18:33:58.608084"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 196ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 1010)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:34:55 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 125)
+
+
+Started GET "/users/2" for ::1 at 2023-01-25 18:34:59 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:35:01 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:35:20 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:37:26 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 100)
+
+
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/users/1" for ::1 at 2023-01-25 18:40:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 10302)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:40:23 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 448)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with [WHERE "users"."auth_token" IS NULL]):
+  
+app/controllers/users_controller.rb:48:in `get_user'
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/users/1" for ::1 at 2023-01-25 18:44:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 404 Not Found in 23ms (ActiveRecord: 5.0ms | Allocations: 4910)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with [WHERE "users"."auth_token" IS NULL]):
+  
+app/controllers/users_controller.rb:48:in `get_user'
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/users/1" for ::1 at 2023-01-25 18:44:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Filter chain halted as :get_user rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 4920)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:45:56 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 5740)
+
+
+Started GET "/users/2" for ::1 at 2023-01-25 18:46:41 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 251)
+
+
+Started GET "/users/1" for ::1 at 2023-01-25 18:46:45 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 262)
+
+
+Started GET "/users/3" for ::1 at 2023-01-25 18:46:50 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 262)
+
+
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/users/3" for ::1 at 2023-01-25 18:51:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/3"):
+  
+Started GET "/profile" for ::1 at 2023-01-25 18:52:06 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 0.3ms | ActiveRecord: 5.0ms | Allocations: 10251)
+
+
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 18:54:17 +0000
+  
+SyntaxError (/mnt/c/Repos/VendingMachine/app/controllers/users_controller.rb:30: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+... && CoinsToUse.include? deposit
+...                        ^~~~~~~
+):
+  
+app/controllers/users_controller.rb:30: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+app/controllers/users_controller.rb:30: syntax error, unexpected local variable or method, expecting `then' or ';' or '\n'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 18:55:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 28ms (ActiveRecord: 5.5ms | Allocations: 10132)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:29:in `deposit'
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 18:55:29 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.1ms | Allocations: 4624)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/users_controller.rb:30:in `is_a?'
+app/controllers/users_controller.rb:30:in `deposit'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 18:57:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 60ms (Views: 0.2ms | ActiveRecord: 5.9ms | Allocations: 12095)
+
+
+Started POST "/deposit?deposit=5,8" for ::1 at 2023-01-25 18:58:00 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5,8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 268)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5,8" for ::1 at 2023-01-25 19:00:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5,8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 119573ms (Views: 0.6ms | ActiveRecord: 5.6ms | Allocations: 122963)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5,8" for ::1 at 2023-01-25 19:02:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5,8"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30706ms (ActiveRecord: 5.1ms | Allocations: 125069)
+
+
+  
+TypeError (class or module required):
+  
+app/controllers/users_controller.rb:31:in `is_a?'
+app/controllers/users_controller.rb:31:in `deposit'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5,8" for ::1 at 2023-01-25 19:08:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5,8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 7130ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 119615)
+
+
+Started POST "/deposit?deposit=saaaasa" for ::1 at 2023-01-25 19:09:07 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"saaaasa"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2304ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 8564)
+
+
+Started POST "/deposit?deposit=4444444s" for ::1 at 2023-01-25 19:09:22 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"4444444s"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 3286ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 8470)
+
+
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 19:09:34 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2477ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 9041)
+
+
+Started POST "/deposit?deposit=1" for ::1 at 2023-01-25 19:09:40 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 12680ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 19018)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:10:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 31ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 12100)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:12:09 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 38860ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 133867)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:15:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3221ms (ActiveRecord: 4.8ms | Allocations: 119646)
+
+
+  
+TypeError (String can't be coerced into Integer):
+  
+app/controllers/users_controller.rb:32:in `+'
+app/controllers/users_controller.rb:32:in `deposit'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:16:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 5], ["updated_at", "2023-01-25 19:16:08.636577"], ["id", 1]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for UsersController#deposit, rendering head :no_content
+Completed 204 No Content in 50ms (ActiveRecord: 15.3ms | Allocations: 12458)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=20" for ::1 at 2023-01-25 19:16:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"20"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 25], ["updated_at", "2023-01-25 19:16:56.071252"], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 58ms (Views: 2.1ms | ActiveRecord: 9.8ms | Allocations: 12137)
+
+
+Started POST "/deposit?deposit=200" for ::1 at 2023-01-25 19:16:59 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"200"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 8ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2065)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:17:02 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 125], ["updated_at", "2023-01-25 19:17:02.782880"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 1033)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 19:27:56 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-25 19:27:56.525146"], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 43ms (Views: 0.1ms | ActiveRecord: 9.3ms | Allocations: 3856)
+
+
+Started GET "/profile" for ::1 at 2023-01-25 19:28:01 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 258)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:05 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 100], ["updated_at", "2023-01-25 19:28:05.106872"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:05 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 200], ["updated_at", "2023-01-25 19:28:05.973602"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:06 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 300], ["updated_at", "2023-01-25 19:28:06.569212"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:07 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 400], ["updated_at", "2023-01-25 19:28:07.114295"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:07 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 500], ["updated_at", "2023-01-25 19:28:07.591185"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 1022)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:28:08 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 600], ["updated_at", "2023-01-25 19:28:08.109526"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 1019)
+
+
+Started GET "/profile" for ::1 at 2023-01-25 19:28:09 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 257)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 19:28:11 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-25 19:28:11.805050"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1002)
+
+
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/profile" for ::1 at 2023-01-25 19:29:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 10294)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:42 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 100], ["updated_at", "2023-01-25 19:29:42.541285"], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 2091)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:42 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 200], ["updated_at", "2023-01-25 19:29:42.915980"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:43 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 300], ["updated_at", "2023-01-25 19:29:43.255185"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:43 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 400], ["updated_at", "2023-01-25 19:29:43.615932"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:44 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 500], ["updated_at", "2023-01-25 19:29:44.009006"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 1022)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:29:44 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 600], ["updated_at", "2023-01-25 19:29:44.486659"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 19:30:01 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-25 19:30:01.735973"], ["id", 1]]
+  [1m[36mTRANSACTION (56.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 65ms (Views: 0.1ms | ActiveRecord: 57.2ms | Allocations: 2828)
+
+
+Started POST "/deposit?deposit=655" for ::1 at 2023-01-25 19:30:11 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"655"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 266)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:30:17 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 100], ["updated_at", "2023-01-25 19:30:17.331274"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:30:17 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 200], ["updated_at", "2023-01-25 19:30:17.973549"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:30:18 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 300], ["updated_at", "2023-01-25 19:30:18.770715"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:30:19 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 400], ["updated_at", "2023-01-25 19:30:19.382113"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:30:20 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 500], ["updated_at", "2023-01-25 19:30:20.062368"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=50" for ::1 at 2023-01-25 19:30:23 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"50"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 550], ["updated_at", "2023-01-25 19:30:23.815367"], ["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=50" for ::1 at 2023-01-25 19:30:24 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"50"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 600], ["updated_at", "2023-01-25 19:30:24.506512"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=50" for ::1 at 2023-01-25 19:30:25 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"50"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 650], ["updated_at", "2023-01-25 19:30:25.397625"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1000)
+
+
+Started POST "/deposit?deposit=10" for ::1 at 2023-01-25 19:30:28 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 660], ["updated_at", "2023-01-25 19:30:28.747385"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:30:31 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 665], ["updated_at", "2023-01-25 19:30:31.731205"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:30:33 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 670], ["updated_at", "2023-01-25 19:30:33.914569"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:30:34 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 675], ["updated_at", "2023-01-25 19:30:34.437466"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1000)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 19:30:37 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-25 19:30:37.404175"], ["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1024)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=5" for ::1 at 2023-01-25 19:31:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 5], ["updated_at", "2023-01-25 19:31:44.554194"], ["id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 6.8ms | Allocations: 12144)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:31:48 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 105], ["updated_at", "2023-01-25 19:31:48.499327"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1036)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:31:48 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 205], ["updated_at", "2023-01-25 19:31:48.864919"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-25 19:31:49 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 305], ["updated_at", "2023-01-25 19:31:49.533366"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=50" for ::1 at 2023-01-25 19:31:53 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"50"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 355], ["updated_at", "2023-01-25 19:31:53.464997"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 1033)
+
+
+Started POST "/deposit?deposit=20" for ::1 at 2023-01-25 19:31:55 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"20"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 375], ["updated_at", "2023-01-25 19:31:55.515415"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 1019)
+
+
+Started POST "/deposit?deposit=10" for ::1 at 2023-01-25 19:32:00 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 385], ["updated_at", "2023-01-25 19:32:00.091763"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1000)
+
+
+Started POST "/deposit?deposit=0" for ::1 at 2023-01-25 19:32:05 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2049)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 19:32:09 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-25 19:32:09.545702"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 1048)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/reset" for ::1 at 2023-01-25 19:44:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 64ms (Views: 2.7ms | ActiveRecord: 5.7ms | Allocations: 13536)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/reset" for ::1 at 2023-01-25 19:45:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 29ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 10324)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 20:00:13 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 45ms (Views: 0.1ms | ActiveRecord: 9.3ms | Allocations: 3071)
+
+
+Started POST "/users" for ::1 at 2023-01-25 20:00:42 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"[FILTERED]", "email"=>"admin@mail.com", "name"=>"Admin", "role"=>"admin"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "role", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "[FILTERED]"], ["email", "admin@mail.com"], ["name", "Admin"], ["role", 0], ["auth_token", "R3dRqCgYRApBBeCq5MYo3AdH"], ["created_at", "2023-01-25 20:00:42.627635"], ["updated_at", "2023-01-25 20:00:42.627635"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 198ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 2013)
+
+
+Started POST "/users" for ::1 at 2023-01-25 20:01:15 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"stocker", "password"=>"[FILTERED]", "email"=>"stocker@mail.com", "name"=>"Stocker", "role"=>"stocker"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stocker"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "stocker@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "name", "role", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["username", "stocker"], ["password_digest", "[FILTERED]"], ["email", "stocker@mail.com"], ["name", "Stocker"], ["role", 2], ["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["created_at", "2023-01-25 20:01:15.693556"], ["updated_at", "2023-01-25 20:01:15.693556"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 199ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 1007)
+
+
+Started POST "/reset" for ::1 at 2023-01-25 20:01:37 +0000
+Processing by UsersController#reset as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Filter chain halted as :check_if_buyer rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 266)
+
+
+Started POST "/deposit?deposit=10" for ::1 at 2023-01-25 20:01:43 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Filter chain halted as :check_if_buyer rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 256)
+
+
+Started GET "/profile" for ::1 at 2023-01-25 20:01:54 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 269)
+
+
+Started GET "/profile" for ::1 at 2023-01-25 20:06:27 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 258)
+
+
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/profile" for ::1 at 2023-01-25 22:21:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 10687)
+
+
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-25 22:28:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 411)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:22:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 198)
+
+
+  
+NoMethodError (undefined method `stocker?' for nil:NilClass):
+  
+app/controllers/products_controller.rb:75:in `check_if_stocker'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:37:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Filter chain halted as :check_if_stocker rendered or redirected
+Completed 401 Unauthorized in 53ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 10148)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:38:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Filter chain halted as :check_if_stocker rendered or redirected
+Completed 401 Unauthorized in 7041ms (Views: 0.3ms | ActiveRecord: 5.0ms | Allocations: 120460)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:39:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Filter chain halted as :check_if_stocker rendered or redirected
+Completed 401 Unauthorized in 48ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 9649)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:40:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Filter chain halted as :check_if_stocker rendered or redirected
+Completed 401 Unauthorized in 27166ms (Views: 0.3ms | ActiveRecord: 5.0ms | Allocations: 120808)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 00:41:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 347813ms (ActiveRecord: 7.7ms | Allocations: 125933)
+
+
+  
+NameError (Rails couldn't find a valid model for user association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/products_controller.rb:18:in `create'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 01:08:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.6ms)[0m  [1m[32mINSERT INTO "products" ("product_name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["product_name", "Kit Kat"], ["amount_available", 10], ["cost", 85], ["seller_id", 4], ["created_at", "2023-01-26 01:08:44.579099"], ["updated_at", "2023-01-26 01:08:44.579099"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering products/show.json.jbuilder
+  Rendered products/_product.json.jbuilder (Duration: 4.1ms | Allocations: 247)
+  Rendered products/show.json.jbuilder (Duration: 15.4ms | Allocations: 937)
+Completed 201 Created in 4818ms (Views: 61.5ms | ActiveRecord: 10.6ms | Allocations: 130546)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 01:14:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Kit Kat", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("product_name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["product_name", "Kit Kat"], ["amount_available", 10], ["cost", 85], ["seller_id", 4], ["created_at", "2023-01-26 01:14:59.477985"], ["updated_at", "2023-01-26 01:14:59.477985"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 9.4ms | Allocations: 15644)
+
+
+  
+NameError (undefined local variable or method `product' for #<ProductsController:0x00000000007198>):
+  
+app/controllers/products_controller.rb:71:in `render_json_product'
+app/controllers/products_controller.rb:21:in `create'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 01:15:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Twix", "amount_available"=>10, "cost"=>85}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("product_name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["product_name", "Twix"], ["amount_available", 10], ["cost", 85], ["seller_id", 4], ["created_at", "2023-01-26 01:15:33.219713"], ["updated_at", "2023-01-26 01:15:33.219713"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 9.6ms | Allocations: 15832)
+
+
+Started POST "/products" for ::1 at 2023-01-26 01:16:00 +0000
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Mars", "amount_available"=>0, "cost"=>95}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("product_name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["product_name", "Mars"], ["amount_available", 0], ["cost", 95], ["seller_id", 4], ["created_at", "2023-01-26 01:16:00.310110"], ["updated_at", "2023-01-26 01:16:00.310110"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 749)
+
+
+Started POST "/products" for ::1 at 2023-01-26 01:16:14 +0000
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Mars", "amount_available"=>0, "cost"=>94}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 518)
+
+
+Started POST "/products" for ::1 at 2023-01-26 01:21:44 +0000
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Mars", "amount_available"=>0, "cost"=>94}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 39ms (Views: 0.2ms | ActiveRecord: 6.7ms | Allocations: 3286)
+
+
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/products" for ::1 at 2023-01-26 01:31:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"product_name"=>"Mars", "amount_available"=>0, "cost"=>94}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 400 Bad Request in 48ms (Views: 0.2ms | ActiveRecord: 7.3ms | Allocations: 17218)
+
+
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from block (3 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actionpack-7.0.4.1/lib/action_controller/railtie.rb:80)
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started GET "/profile" for ::1 at 2023-01-26 01:36:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 10308)
+
+
+Started POST "/login" for ::1 at 2023-01-26 01:36:27 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 469)
+
+
+Started DELETE "/logout/all" for ::1 at 2023-01-26 01:36:31 +0000
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.3ms | Allocations: 4814)
+
+
+Started POST "/login" for ::1 at 2023-01-26 01:36:34 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["updated_at", "2023-01-26 01:36:34.744227"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 197ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 1971)
+
+
+Started POST "/deposit?deposit=10" for ::1 at 2023-01-26 01:36:51 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 10], ["updated_at", "2023-01-26 01:36:51.105623"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1302)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 01:36:59 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-26 01:36:59.626065"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 1028)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:39:53 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Filter chain halted as :get_user_by_token rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 333)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:41:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Mw56sQhiUnCNJcwE645ABRhy"], ["LIMIT", 1]]
+Filter chain halted as :get_user_by_token rendered or redirected
+Completed 401 Unauthorized in 19ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 5569)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:42:12 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 7.2ms | Allocations: 12582)
+
+
+  
+NoMethodError (undefined method `*' for nil:NilClass):
+  
+app/controllers/products_controller.rb:42:in `buy'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:43:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26917ms (ActiveRecord: 8.0ms | Allocations: 142363)
+
+
+  
+NoMethodError (undefined method `*' for nil:NilClass):
+  
+app/controllers/products_controller.rb:43:in `buy'
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:44:16 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2366ms (ActiveRecord: 5.3ms | Allocations: 20596)
+
+
+  
+ArgumentError (comparison of Integer with String failed):
+  
+app/controllers/products_controller.rb:45:in `<'
+app/controllers/products_controller.rb:45:in `buy'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:46:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 23044ms (ActiveRecord: 8.7ms | Allocations: 176934)
+
+
+  
+NoMethodError (undefined method `deposit' for nil:NilClass):
+  
+app/controllers/products_controller.rb:47:in `buy'
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:47:00 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1989ms (ActiveRecord: 4.9ms | Allocations: 21178)
+
+
+  
+ArgumentError (comparison of String with 110 failed):
+  
+app/controllers/products_controller.rb:47:in `<'
+app/controllers/products_controller.rb:47:in `buy'
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:51:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 2575ms (Views: 0.3ms | ActiveRecord: 8.5ms | Allocations: 128237)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:52:10 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1431ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 21232)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:52:31 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 1582ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 12968)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:56:19 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 5.2ms | Allocations: 7577)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, Integer passed.):
+  
+app/controllers/products_controller.rb:50:in `buy'
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:56:32 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.3ms | Allocations: 7595)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'amount' for Product.):
+  
+app/controllers/products_controller.rb:50:in `buy'
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:56:42 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 9], ["updated_at", "2023-01-26 01:56:42.502747"], ["id", 3]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-26 01:56:42.509062"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 46ms (Views: 0.3ms | ActiveRecord: 7.8ms | Allocations: 12679)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 01:57:03 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 359)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 02:07:48 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 99ms (Views: 0.3ms | ActiveRecord: 8.9ms | Allocations: 3443)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:12:10 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 100], ["updated_at", "2023-01-26 02:12:10.691731"], ["id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 1116)
+
+
+DEPRECATION WARNING: Using legacy connection handling is deprecated. Please set
+`legacy_connection_handling` to `false` in your application.
+
+The new connection handling does not support `connection_handlers`
+getter and setter.
+
+Read more about how to migrate at: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+ (called from block (2 levels) in <class:Railtie> at /home/mingos/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/activerecord-7.0.4.1/lib/active_record/railtie.rb:264)
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:12:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Non-URL-safe CSRF tokens are deprecated. Use 6.1 defaults or above. (called from <top (required)> at /mnt/c/Repos/VendingMachine/app/controllers/application_controller.rb:1)
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 200], ["updated_at", "2023-01-26 02:12:54.273938"], ["id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 8.2ms | Allocations: 12163)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 02:12:56 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 8], ["updated_at", "2023-01-26 02:12:57.006565"], ["id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 115], ["updated_at", "2023-01-26 02:12:57.010837"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 42ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 9823)
+
+
+Started GET "/profile" for ::1 at 2023-01-26 02:13:01 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "fMpvXWYJsn8RdLcDdo3wiUPW"], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.8ms | Allocations: 4701)
+
+
+Started GET "/profile" for ::1 at 2023-01-26 02:13:27 +0000
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 258)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:13:34 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 215], ["updated_at", "2023-01-26 02:13:34.419388"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 1349)
+
+
+Started POST "/buy?amount=2&product_id=3" for ::1 at 2023-01-26 02:13:40 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"2", "product_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 6], ["updated_at", "2023-01-26 02:13:40.366351"], ["id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 45], ["updated_at", "2023-01-26 02:13:40.370931"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 5005)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:13:58 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 145], ["updated_at", "2023-01-26 02:13:58.460554"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 1039)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:13:59 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 245], ["updated_at", "2023-01-26 02:13:59.258297"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 1038)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:13:59 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 345], ["updated_at", "2023-01-26 02:13:59.727708"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 1024)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:14:00 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 445], ["updated_at", "2023-01-26 02:14:00.163799"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 1024)
+
+
+Started POST "/deposit?deposit=100" for ::1 at 2023-01-26 02:14:00 +0000
+Processing by UsersController#deposit as */*
+  Parameters: {"deposit"=>"100"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 545], ["updated_at", "2023-01-26 02:14:00.687911"], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1024)
+
+
+Started POST "/buy?amount=5&product_id=3" for ::1 at 2023-01-26 02:14:08 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"5", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 1], ["updated_at", "2023-01-26 02:14:08.244761"], ["id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 120], ["updated_at", "2023-01-26 02:14:08.249024"], ["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 1708)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 02:14:26 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 0], ["updated_at", "2023-01-26 02:14:26.594836"], ["id", 3]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 35], ["updated_at", "2023-01-26 02:14:26.599474"], ["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 1711)
+
+
+Started POST "/buy?amount=1&product_id=3" for ::1 at 2023-01-26 02:14:28 +0000
+Processing by ProductsController#buy as */*
+  Parameters: {"amount"=>"1", "product_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "rvRYLvV8wbsQ4NoR19Ymsi5q"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 361)
+
+

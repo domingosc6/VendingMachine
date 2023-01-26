@@ -1,10 +1,10 @@
-class ProductsController < ApplicationController
+class ProductsController < ApiController
   include ApplicationHelper
 
-  before_action :require_login, except: [:show]
+  before_action :get_user_by_token, except: [:show]
   before_action :set_product, only: %i[ show update destroy buy ]
-  before_action :check_role_from_user, only: :create
-  before_action :check_user, only: %i[ update destroy ]
+  before_action :check_if_stocker, only: %i[ create update destroy ]
+  before_action :check_if_buyer, only: :buy
 
   def index
     @products = Product.all
@@ -16,19 +16,20 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.seller = @user
 
     if @product.save
-      render :show, status: :created, location: @product
+      render_json_product
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render_error(@product.errors.to_a.join)
     end
   end
 
   def update
     if @product.update(product_params)
-      render :show, status: :ok, location: @product
+      render_json_product
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render_error(@product.errors.to_a.join)
     end
   end
 
@@ -36,24 +37,25 @@ class ProductsController < ApplicationController
     @product.destroy
   end
   
-  def buy 
-      amount = params[:ammount]
+  def buy
+    if params[:amount] === params[:amount].to_i.to_s
+      amount = Integer(params[:amount])
       total_value = amount * @product.cost
-
       if @product.amount_available < amount
-        @product.errors.add(parameters[:amount_available], 'is not sufficient for your purchase')
-        render json: @product.errors, status: :bad_request
-      elsif total_value < @current_user.deposit
-        @product.errors.add(parameters[:cost], 'is high enough for your purchase')
-        render json: @product.errors, status: :bad_request
+        render_error('Product requested doesn\'t have enough quantity.')
+      elsif total_value > @user.deposit
+        render_error('The product value is too high for your purchase.')
       else
-        @product.amount_available -= amount
+        new_amount = @product.amount_available - amount
+        @product.update(amount_available: new_amount)
         change = @user.deposit - total_value
-        @user.deposit = 0
+        @user.update(deposit: 0)
         change_array = get_change_in_coins(change)
         render json: {change: change_array}
       end
-      
+    else
+      render_error(@product.errors.to_a.join)
+    end
   end
 
   private
@@ -68,7 +70,7 @@ class ProductsController < ApplicationController
   end
 
   def render_json_product
-    render json: {product: {product_name: product.product_name, amount_available: product.amount_available, cost: product.cost, seller: product.seller.name}}
+    render json: {product: {product_name: @product.product_name, amount_available: @product.amount_available, cost: @product.cost, seller: @product.seller.name}}
   end
 
 end

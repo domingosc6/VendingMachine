@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
     
     def require_login
-        authenticate_token || render_unauthorized("Access Denied")
+        authenticate_token || render_unauthorized('Access Denied')
     end
     
     def current_user
@@ -24,9 +24,23 @@ class ApiController < ApplicationController
     
     def authenticate_token
         authenticate_with_http_token do |token, options|
-            debugger
             User.find_by(auth_token: token)
         end
+    end
+
+    def get_user_by_token
+        @user = User.find_by_auth_token(request.headers[:token])
+        if @user.nil?
+            render_unauthorized('Access Denied')
+        end
+    end
+
+    def check_if_stocker
+        render_unauthorized('You don\'t have the necessary role for this action.') unless @user.stocker? || @user.admin?
+    end
+
+    def check_if_buyer
+        render_unauthorized('You don\'t have the necessary role for this action.') unless @user.buyer? || @user.admin?
     end
     
 end

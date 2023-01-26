@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
     
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  post 'login' => "sessions#create"
-  delete '/logout/all' => "sessions#destroy"
-  resources :users  
+  post 'login' => 'sessions#create'
+  delete '/logout/all' => 'sessions#destroy'
+  resources :users, only: [:create, :index]
   resources :products
-  post 'deposit' => "users#deposit"
-  post 'reset' => "users#reset"
-  post 'buy' => "products#buy"
+  post 'deposit' => 'users#deposit'
+  post 'reset' => 'users#reset'
+  post 'buy' => 'products#buy'
+  get 'profile' => 'users#profile'
   
 end
