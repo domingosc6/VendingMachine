@@ -8,16 +8,16 @@ mars:
   name: Mars
   amount_available: 5
   cost: 80
-  seller_id: <%= User.where(role: 'stocker').pluck(:id).first %> 
+  seller: stocker1
 
 twix:
   name: Twix
   amount_available: 0
   cost: 95
-  seller_id: <%= User.where(role: 'stocker').pluck(:id).first %> 
+  seller: stocker1
 
 kitkat:
   name: Kit Kat
   amount_available: 2
   cost: 125
-  seller_id: <%= User.where(role: 'stocker').pluck(:id).second %> 
+  seller: stocker2
