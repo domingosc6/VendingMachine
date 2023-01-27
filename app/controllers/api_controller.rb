@@ -1,5 +1,6 @@
 class ApiController < ApplicationController
-    
+    include ApplicationHelper
+
     def require_login
         authenticate_token || render_unauthorized('Access Denied')
     end
@@ -36,11 +37,15 @@ class ApiController < ApplicationController
     end
 
     def check_if_stocker
-        render_unauthorized('You don\'t have the necessary role for this action.') unless @user.stocker? || @user.admin?
+        render_unauthorized(UnauthorizedAccess) unless @user.stocker? || @user.admin?
     end
 
     def check_if_buyer
-        render_unauthorized('You don\'t have the necessary role for this action.') unless @user.buyer? || @user.admin?
+        render_unauthorized(UnauthorizedAccess) unless @user.buyer? || @user.admin?
+    end
+
+    def check_if_admin
+        render_unauthorized(UnauthorizedAccess) unless @user.admin?
     end
     
 end

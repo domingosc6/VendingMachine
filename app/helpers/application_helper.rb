@@ -1,5 +1,6 @@
 module ApplicationHelper
     CoinsToUse = [5, 10, 20, 50, 100]
+    UnauthorizedAccess = 'You don\'t have the necessary role for this action.'
 
     def get_change_in_coins(change)
         coins = []

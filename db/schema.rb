@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_215226) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.string "product_name"
+    t.string "name"
     t.integer "amount_available"
     t.integer "cost"
     t.integer "seller_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_215226) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.string "name"
     t.integer "role", default: 1
     t.integer "deposit", default: 0
     t.string "auth_token"

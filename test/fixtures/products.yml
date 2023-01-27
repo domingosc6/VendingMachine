@@ -2,10 +2,22 @@
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
+# below each fixture. per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+mars:
+  name: Mars
+  amount_available: 5
+  cost: 80
+  seller_id: <%= User.where(role: 'stocker').pluck(:id).first %> 
+
+twix:
+  name: Twix
+  amount_available: 0
+  cost: 95
+  seller_id: <%= User.where(role: 'stocker').pluck(:id).first %> 
+
+kitkat:
+  name: Kit Kat
+  amount_available: 2
+  cost: 125
+  seller_id: <%= User.where(role: 'stocker').pluck(:id).second %> 

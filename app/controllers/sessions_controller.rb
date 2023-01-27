@@ -8,8 +8,10 @@ class SessionsController < ApiController
       send_token_for_valid_login_of(@user)
     elsif @user.errors[:auth_token].present?
       render_unauthorized(@user.errors[:auth_token])
+    elsif @user.errors[:password].present?
+      render_unauthorized(@user.errors[:password].to_sentence)
     else
-      render_unauthorized('Error with your login password')
+      render_unauthorized('System error, please contact admin')
     end
   end
 

@@ -1,13 +1,22 @@
 class ProductsController < ApiController
   include ApplicationHelper
 
-  before_action :get_user_by_token, except: [:show]
+  before_action :get_user_by_token, except: [:show, :index]
   before_action :set_product, only: %i[ show update destroy buy ]
   before_action :check_if_stocker, only: %i[ create update destroy ]
   before_action :check_if_buyer, only: :buy
+  before_action :check_if_seller_from_product, only: [:update, :destroy]
 
   def index
-    @products = Product.all
+    json_array = []
+    if Product.any?
+        Product.all.order(:id).each do |product|
+            json_array << product.product_in_json
+        end
+        render json: json_array
+    else
+      render_error('There aren\'t products in the database.')
+    end
   end
 
   def show
@@ -21,7 +30,7 @@ class ProductsController < ApiController
     if @product.save
       render_json_product
     else
-      render_error(@product.errors.to_a.join)
+      render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
     end
   end
 
@@ -29,16 +38,20 @@ class ProductsController < ApiController
     if @product.update(product_params)
       render_json_product
     else
-      render_error(@product.errors.to_a.join)
+      render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
     end
   end
 
   def destroy
-    @product.destroy
+    if @product.destroy
+        render json: { message: "User with id #{params[:id]} destroyed succesfully" }
+    else
+        render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
+    end
   end
   
   def buy
-    if params[:amount] === params[:amount].to_i.to_s
+    if params[:amount].to_s === params[:amount].to_i.to_s
       amount = Integer(params[:amount])
       total_value = amount * @product.cost
       if @product.amount_available < amount
@@ -54,7 +67,7 @@ class ProductsController < ApiController
         render json: {change: change_array}
       end
     else
-      render_error(@product.errors.to_a.join)
+      render_error('Incorrect amount')
     end
   end
 
@@ -66,11 +79,15 @@ class ProductsController < ApiController
   end
 
   def product_params
-    params.require(:product).permit(:product_name, :amount_available, :cost)
+    params.require(:product).permit(:name, :amount_available, :cost)
   end
 
   def render_json_product
-    render json: {product: {product_name: @product.product_name, amount_available: @product.amount_available, cost: @product.cost, seller: @product.seller.name}}
+    render json: @product.product_in_json
+  end
+
+  def check_if_seller_from_product
+    render_error('Access Denied for this Product') unless @product.seller.id == @user.id
   end
 
 end

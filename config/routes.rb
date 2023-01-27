@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
     
-  post 'login' => 'sessions#create'
-  delete '/logout/all' => 'sessions#destroy'
-  resources :users, only: [:create, :index]
+  post 'login', to: 'sessions#create'
+  delete '/logout/all', to: 'sessions#destroy'
+  put 'user', to: 'users#update'
+  resources :users, only: [:create, :index, :destroy]
   resources :products
-  post 'deposit' => 'users#deposit'
-  post 'reset' => 'users#reset'
-  post 'buy' => 'products#buy'
-  get 'profile' => 'users#profile'
+  post 'deposit', to: 'users#deposit'
+  post 'reset', to: 'users#reset'
+  post 'buy', to: 'products#buy'
+  get 'profile', to: 'users#profile'
   
 end
