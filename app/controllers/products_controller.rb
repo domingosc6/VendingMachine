@@ -54,6 +54,7 @@ class ProductsController < ApiController
     if params[:amount].to_s === params[:amount].to_i.to_s
       amount = Integer(params[:amount])
       total_value = amount * @product.cost
+
       if @product.amount_available < amount
         render_error('Product requested doesn\'t have enough quantity.')
       elsif total_value > @user.deposit
@@ -66,6 +67,7 @@ class ProductsController < ApiController
         change_array = get_change_in_coins(change)
         render json: {change: change_array}
       end
+      
     else
       render_error('Incorrect amount')
     end

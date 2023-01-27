@@ -21,9 +21,11 @@ class UsersController < ApiController
     def index
         json_array = []
         if User.any?
+
             User.all.order(:id).each do |user|
                 json_array << user.profile_in_json(true)
             end
+            
             render json: json_array
         else
             render json: { message: 'There aren\'t users in the database.' }

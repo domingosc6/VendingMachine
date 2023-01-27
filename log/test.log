@@ -3553,3 +3553,1556 @@ Processing by SessionsController#create as JSON
 Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2441)
 Started DELETE "/user?id=1" for 127.0.0.1 at 2023-01-27 04:31:21 +0000
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (1.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:32:05.767245', '2023-01-27 04:32:05.767245'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:32:05.767245', '2023-01-27 04:32:05.767245'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:32:05.767245', '2023-01-27 04:32:05.767245');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$z9Ld5R7CnG7SpMZbiXI.9OltkUYCQerOpTUA5fDIThTc5d/geAQd2', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:32:05.772275', '2023-01-27 04:32:05.772275'), (135138680, 'admin', '$2a$04$5gqtxX58W/jFHpzoYDLAFOeS8FR3mZLDcWCQ34zCcFhxaXTq6YTe6', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:32:05.772275', '2023-01-27 04:32:05.772275'), (369520569, 'stocker1', '$2a$04$zvsWXoM.jggTTejUHEV05uWNQYZ9os7lfV2mmwc86EkTeeA60s88C', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:32:05.772275', '2023-01-27 04:32:05.772275'), (252657165, 'stocker2', '$2a$04$8q4gyhN6UtdcQyO4UYU9DODBN1zRunH.8xtpOtb5GrJThk7VzLQKu', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:32:05.772275', '2023-01-27 04:32:05.772275')[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_as_admin_should_delete_user
+-----------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:32:06 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "FbC2S5gyScYCuNLtvQ8DY2hE"], ["updated_at", "2023-01-27 04:32:06.371988"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2443)
+Started DELETE "/users/1" for 127.0.0.1 at 2023-01-27 04:32:06 +0000
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "FbC2S5gyScYCuNLtvQ8DY2hE"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 753)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:32:46.230298', '2023-01-27 04:32:46.230298'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:32:46.230298', '2023-01-27 04:32:46.230298'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:32:46.230298', '2023-01-27 04:32:46.230298');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$FmAzuR3MHas7EzoM.xow3e6bFMdZVVMYAvBCHGRd29HaGU35Q4Ifu', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:32:46.234498', '2023-01-27 04:32:46.234498'), (135138680, 'admin', '$2a$04$pFpY0ybrTeo0pzH3wznqbO/YwHZeDR4r1Rs/H0tDgC7v/x3M0Lphu', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:32:46.234498', '2023-01-27 04:32:46.234498'), (369520569, 'stocker1', '$2a$04$YzFFkwm0wIKQdCVUjnNxxevgUk.c099EpqJP3KPe.NPrdX7er6J8e', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:32:46.234498', '2023-01-27 04:32:46.234498'), (252657165, 'stocker2', '$2a$04$yaGEt8XyGAeUB3PXonzKDukUxryw752Ga/ecg4QQCCIrhrhiTzUvm', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:32:46.234498', '2023-01-27 04:32:46.234498')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_as_admin_should_delete_user
+-----------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:32:46 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "VGFzHwLBru4o71bsY6CqtZ9z"], ["updated_at", "2023-01-27 04:32:46.784661"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2438)
+Started DELETE "/users/746758752" for 127.0.0.1 at 2023-01-27 04:32:46 +0000
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"746758752", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "VGFzHwLBru4o71bsY6CqtZ9z"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 987)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:33:04.118962', '2023-01-27 04:33:04.118962'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:33:04.118962', '2023-01-27 04:33:04.118962'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:33:04.118962', '2023-01-27 04:33:04.118962');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$578PReJEZ97/q22enSgD2.0N7zY0I.E79JZai7vkSCWjwV/Yy9NhO', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:33:04.124204', '2023-01-27 04:33:04.124204'), (135138680, 'admin', '$2a$04$s/xTUsn5BsG5UE00tzhOO.rHXL5/bQfcLmO4r2za45.HY5i3OsaGq', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:33:04.124204', '2023-01-27 04:33:04.124204'), (369520569, 'stocker1', '$2a$04$ZLJ73PvBD6sd3.3F6pqUfuGaAIj9C8TYVMdWGPdYHs6awon01XlKy', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:04.124204', '2023-01-27 04:33:04.124204'), (252657165, 'stocker2', '$2a$04$LDzW7m.D7NIPbMVJwhFBuO.2bUO0msG5CjUfXYMxmloYmtTE/l91y', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:04.124204', '2023-01-27 04:33:04.124204')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_as_admin_should_delete_user
+-----------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:04 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "6riq7LaGtCRfKw2ncbHZbNPR"], ["updated_at", "2023-01-27 04:33:04.723739"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2437)
+Started DELETE "/users/746758752" for 127.0.0.1 at 2023-01-27 04:33:04 +0000
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"746758752", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "6riq7LaGtCRfKw2ncbHZbNPR"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 987)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:33:08.115837', '2023-01-27 04:33:08.115837'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:33:08.115837', '2023-01-27 04:33:08.115837'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:33:08.115837', '2023-01-27 04:33:08.115837');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$oFeG3LQCuBR..jA8LpHAXuIn.y0G921TZfq7c4AfxIAMWetnm0LWq', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:33:08.120256', '2023-01-27 04:33:08.120256'), (135138680, 'admin', '$2a$04$5sXNEK52X/g.N.h63L6y8ubtAHz3RHzU7pJMbqzOXsZ87Eo1zLQxC', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:33:08.120256', '2023-01-27 04:33:08.120256'), (369520569, 'stocker1', '$2a$04$lEr4h4tmpmoirCf5SFuRp.c96XNM3JWznS7zBWxDG73QSFDz4tuum', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:08.120256', '2023-01-27 04:33:08.120256'), (252657165, 'stocker2', '$2a$04$DlRryuOghXT33/3Gj/3.rOS52KRQzZUwDd8qFukZve2KwOc320zF.', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:08.120256', '2023-01-27 04:33:08.120256')[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+UsersControllerTest: test_should_not_update_user_email
+------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "CUzebaNYQvkD4koUqx5Bk3p7"], ["updated_at", "2023-01-27 04:33:08.672868"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2437)
+Started PUT "/user" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#update as JSON
+  Parameters: {"email"=>"admin@mail.com", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "CUzebaNYQvkD4koUqx5Bk3p7"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 7ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 3674)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------
+UsersControllerTest: test_should_create_user_then_logout_then_login_then_show_info
+----------------------------------------------------------------------------------
+Started POST "/users" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Test", "email"=>"test@mail.com", "role"=>"buyer", "deposit"=>0, "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Test"], ["password_digest", "[FILTERED]"], ["email", "test@mail.com"], ["auth_token", "fDYy86LJSj1eMwoLm482TLG5"], ["created_at", "2023-01-27 04:33:08.712934"], ["updated_at", "2023-01-27 04:33:08.712934"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1080)
+Started DELETE "/logout/all" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#destroy as JSON
+  Parameters: {"username"=>"Test", "password"=>"[FILTERED]", "session"=>{"username"=>"Test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 746758753]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 336)
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"Test", "password"=>"[FILTERED]", "session"=>{"username"=>"Test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Test"], ["id", 746758753], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@mail.com"], ["id", 746758753], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "nnUKxjH5y2S7HhhCsPUuVxBx"], ["updated_at", "2023-01-27 04:33:08.732786"], ["id", 746758753]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 983)
+Started GET "/profile" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "nnUKxjH5y2S7HhhCsPUuVxBx"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 239)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersControllerTest: test_should_not_post_deposit
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "sU6TxDG6cw4bLDMuoJwFdgzU"], ["updated_at", "2023-01-27 04:33:08.758228"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 985)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>60, "user"=>{"deposit"=>60}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "sU6TxDG6cw4bLDMuoJwFdgzU"], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 256)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------
+UsersControllerTest: test_as_normal_user_should_not_show_info_about_users
+-------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "Q6KXk17CHjDDhQbUGHPEZ488"], ["updated_at", "2023-01-27 04:33:08.780418"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 984)
+Started GET "/users" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Q6KXk17CHjDDhQbUGHPEZ488"], ["LIMIT", 1]]
+Filter chain halted as :check_if_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 230)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_post_deposit
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "VBVxM1tF4jmUXoC2BAxSHyfg"], ["updated_at", "2023-01-27 04:33:08.800936"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 985)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "VBVxM1tF4jmUXoC2BAxSHyfg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:33:08.811685"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 999)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UsersControllerTest: test_as_admin_should_show_info_about_users
+---------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "Y82bwRsYtCCpdDbhqnKo3zKh"], ["updated_at", "2023-01-27 04:33:08.823603"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 985)
+Started GET "/users" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Y82bwRsYtCCpdDbhqnKo3zKh"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 748)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 252657165], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_as_admin_should_delete_user
+-----------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "BSTG1QXFfcLuVxjn15WsmxM3"], ["updated_at", "2023-01-27 04:33:08.849224"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 988)
+Started DELETE "/users/746758752" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"746758752", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "BSTG1QXFfcLuVxjn15WsmxM3"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 746758752]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 719)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+UsersControllerTest: test_should_update_user_email
+--------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "DKNaAwneksjhfBX1GgMAt9qs"], ["updated_at", "2023-01-27 04:33:08.873067"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 984)
+Started PUT "/user" for 127.0.0.1 at 2023-01-27 04:33:08 +0000
+Processing by UsersController#update as JSON
+  Parameters: {"email"=>"test_use_case@mail.com", "user"=>{"email"=>"test_use_case@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "DKNaAwneksjhfBX1GgMAt9qs"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test_use_case@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "test_use_case@mail.com"], ["updated_at", "2023-01-27 04:33:08.883706"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1050)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.7ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:33:25.609678', '2023-01-27 04:33:25.609678'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:33:25.609678', '2023-01-27 04:33:25.609678'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:33:25.609678', '2023-01-27 04:33:25.609678');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$hgpYgaGDPPmkq.aKnAtKbuNpCrc5YUsh4wSXAub.6s/jEvPxHPmha', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:33:25.615073', '2023-01-27 04:33:25.615073'), (135138680, 'admin', '$2a$04$2EqncLz3AhS4vt5wy.MVjuag67mIbBmuiVRw7V.vmQjnVFwz/EcA2', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:33:25.615073', '2023-01-27 04:33:25.615073'), (369520569, 'stocker1', '$2a$04$qFlC9tBVglI5/wY/gjtWduv/NmuwiffGioi0aAO/nHgJOpAYDv/hG', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:25.615073', '2023-01-27 04:33:25.615073'), (252657165, 'stocker2', '$2a$04$Wm9SlnJXBCfFEiNlM9OijuvjXnLAVLYILz91qulpEmegge0OOgMK.', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:33:25.615073', '2023-01-27 04:33:25.615073')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+SessionsControllerTest: test_should_login_then_logout
+-----------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:26 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "gxD3XfSBpm9LGuEeMbvWY2ea"], ["updated_at", "2023-01-27 04:33:26.214467"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2437)
+Started DELETE "/logout/all" for 127.0.0.1 at 2023-01-27 04:33:26 +0000
+Processing by SessionsController#destroy as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 746758752]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 341)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SessionsControllerTest: test_should_not_login
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:33:26 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2064)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:37:02.048043', '2023-01-27 04:37:02.048043'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:37:02.048043', '2023-01-27 04:37:02.048043'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:37:02.048043', '2023-01-27 04:37:02.048043');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$NvJmkmjCwUou1.RCNkmVoePMxC2dp.I9aOOYoqoYzpp3yM7yPC1ji', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:37:02.052306', '2023-01-27 04:37:02.052306'), (135138680, 'admin', '$2a$04$dKSqhP.FC0dW5E3lXMYKA.U2UhyKMn1Wu8fsyw96Pd9vETMCsqQke', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:37:02.052306', '2023-01-27 04:37:02.052306'), (369520569, 'stocker1', '$2a$04$9L9cuRl71PhY29/2aH6Mr.OKwc.YHmiHLL8MN4JZWLa/TuxLojOiy', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:37:02.052306', '2023-01-27 04:37:02.052306'), (252657165, 'stocker2', '$2a$04$df9llgodRvc/eQBe6pfWVOGXWCQLTvMU/ztcOjZFRuRBV3ZfuFKL6', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:37:02.052306', '2023-01-27 04:37:02.052306')[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:37:02 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "scCSsZLQ4PiEMxtT9HU9EnCG"], ["updated_at", "2023-01-27 04:37:02.691945"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2436)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:37:02 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 753)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:37:52.622208', '2023-01-27 04:37:52.622208'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:37:52.622208', '2023-01-27 04:37:52.622208'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:37:52.622208', '2023-01-27 04:37:52.622208');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$KXI17mfZLH9i3f.3HT.O.uWxi7ZEhzuXPzVVbKLGPyP7lRA1rCdK2', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:37:52.628756', '2023-01-27 04:37:52.628756'), (135138680, 'admin', '$2a$04$EHBY2VmACIbJtFnHXUcOweX4ysrmR34W3qU5VTwpCqCp2v7dWexim', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:37:52.628756', '2023-01-27 04:37:52.628756'), (369520569, 'stocker1', '$2a$04$j.fIO/RjIu8jYia9daK2uehZt9kqPN7YozIomau3pPb6fRIdRc5R6', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:37:52.628756', '2023-01-27 04:37:52.628756'), (252657165, 'stocker2', '$2a$04$I9khVJ7GSd5FV/zBJHoW2.kbExZVe1d63r.yLOrtnPOCms1.ZwLFa', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:37:52.628756', '2023-01-27 04:37:52.628756')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:37:52 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "WfCtpPTxPxfvE2Msqocn5GTA"], ["updated_at", "2023-01-27 04:37:53.172946"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2431)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:37:53 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 759)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:42:33.802045', '2023-01-27 04:42:33.802045'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:42:33.802045', '2023-01-27 04:42:33.802045'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:42:33.802045', '2023-01-27 04:42:33.802045');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$AI0HCfZdFflaAtPrOoI9P..FGHigkfU87cnXn2tp4G2e/lwWYgAHW', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:42:33.806282', '2023-01-27 04:42:33.806282'), (135138680, 'admin', '$2a$04$GCF2Kif4D8byP12tvAEvn.m/6RkZBtuPxyLHDTkr6/aJZoiO1tj7W', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:42:33.806282', '2023-01-27 04:42:33.806282'), (369520569, 'stocker1', '$2a$04$DDQC3t9fgNr1GyM.6PS2H.984VGoRCxRuNa2SRpSfsVVRJBl7ZBVO', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:42:33.806282', '2023-01-27 04:42:33.806282'), (252657165, 'stocker2', '$2a$04$vXLtOqrB.SxgazSFSO0vOOgLHkaS9P3mkXIboOVO8C3pyWbRNtPd2', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:42:33.806282', '2023-01-27 04:42:33.806282')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:42:34 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "7cQzZrkhtfQdnVTiLte1ekeZ"], ["updated_at", "2023-01-27 04:42:34.414570"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2429)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:42:34 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "7cQzZrkhtfQdnVTiLte1ekeZ"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:42:34 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "7cQzZrkhtfQdnVTiLte1ekeZ"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:42:34.448171"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:42:34 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "7cQzZrkhtfQdnVTiLte1ekeZ"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:42:34.475200"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:42:34.477220"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:45:14.249426', '2023-01-27 04:45:14.249426'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:45:14.249426', '2023-01-27 04:45:14.249426'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:45:14.249426', '2023-01-27 04:45:14.249426');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$9SmLlRuC0I1TmoT/EoCrL.7bKtv2s45WsGKA1s/CrZVI1U/nqCda.', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:45:14.254284', '2023-01-27 04:45:14.254284'), (135138680, 'admin', '$2a$04$nUGfR0pq0bnh7ZjJLg39He1IH6TTUZ3NlWRfvqa4m.vJumsCgHqP2', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:45:14.254284', '2023-01-27 04:45:14.254284'), (369520569, 'stocker1', '$2a$04$m09jQRGxeilqCluhh/2bjeuAE7LLO/F1uzM4k8v3knl.nJnIqKqAq', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:45:14.254284', '2023-01-27 04:45:14.254284'), (252657165, 'stocker2', '$2a$04$5gsHO/F/tG4aEFgG4ZZtMu5d28TulY8rvkhBW524ku6rUJoYnuu3y', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:45:14.254284', '2023-01-27 04:45:14.254284')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:45:14 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "3Cmh5tp5QYs9a5Ge26tzRPhW"], ["updated_at", "2023-01-27 04:45:14.845023"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2391)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:45:14 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "3Cmh5tp5QYs9a5Ge26tzRPhW"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:45:14 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "3Cmh5tp5QYs9a5Ge26tzRPhW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:45:14.879548"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1148)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:45:14 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "3Cmh5tp5QYs9a5Ge26tzRPhW"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:45:14.907020"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:45:14.909208"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 4512)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (1.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:45:28.943549', '2023-01-27 04:45:28.943549'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:45:28.943549', '2023-01-27 04:45:28.943549'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:45:28.943549', '2023-01-27 04:45:28.943549');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$wsNuz6qdat1aKjZn0hKH4uL4N7CCJ4RWPsccn7CN62JF57d/O0AZu', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:45:28.948994', '2023-01-27 04:45:28.948994'), (135138680, 'admin', '$2a$04$3yuUCXMgfMQ61mvbRSEUNuZK5x61rU/VHYIk.qA3Rb5cqH23IU.rO', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:45:28.948994', '2023-01-27 04:45:28.948994'), (369520569, 'stocker1', '$2a$04$zRhlQ2Muvdqe/awPcTXFW.yTZA4rhhpn8J.Tm3LnzEOWYTlizYoQi', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:45:28.948994', '2023-01-27 04:45:28.948994'), (252657165, 'stocker2', '$2a$04$wS46qt9yZzWgjQtXAElDFONyr6vOyCQZgJhV2hGGF262NkTDkYVYa', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:45:28.948994', '2023-01-27 04:45:28.948994')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:45:29 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "H7iLxPNRekGgXYnPtmF6tbGz"], ["updated_at", "2023-01-27 04:45:29.491496"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2431)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:45:29 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "H7iLxPNRekGgXYnPtmF6tbGz"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:45:29 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "H7iLxPNRekGgXYnPtmF6tbGz"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:45:29.524886"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:45:29 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "H7iLxPNRekGgXYnPtmF6tbGz"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:45:29.552648"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:45:29.554757"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:46:38.987709', '2023-01-27 04:46:38.987709'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:46:38.987709', '2023-01-27 04:46:38.987709'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:46:38.987709', '2023-01-27 04:46:38.987709');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$WxNByq.ZmBcm41PVun5O9OXBmD5AjEPh8kXZRUgmYrAT1RJGzVRWe', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:46:38.994043', '2023-01-27 04:46:38.994043'), (135138680, 'admin', '$2a$04$h/ZmxFRH4425zXWP7y94/OAF4MZ1aMQIa42seimHo3U5NlE.ekI4O', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:46:38.994043', '2023-01-27 04:46:38.994043'), (369520569, 'stocker1', '$2a$04$G92bmWqZuxd5Y4vX3ccNUuaeRofebM7rdUsDhfwnBYGtTscRWsBtG', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:46:38.994043', '2023-01-27 04:46:38.994043'), (252657165, 'stocker2', '$2a$04$OdwnMHLFTS713YHDtGc8VOprn62/chHm8kr660wb95uz8Qe5Sz0ZW', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:46:38.994043', '2023-01-27 04:46:38.994043')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:46:39 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "JkR3c3gEKN7i5n6BNGGF8fwC"], ["updated_at", "2023-01-27 04:46:39.544651"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2433)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:46:39 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "JkR3c3gEKN7i5n6BNGGF8fwC"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:46:39 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "JkR3c3gEKN7i5n6BNGGF8fwC"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:46:39.577418"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:46:39 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "JkR3c3gEKN7i5n6BNGGF8fwC"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:46:39.604839"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:46:39.607242"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:47:52.650773', '2023-01-27 04:47:52.650773'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:47:52.650773', '2023-01-27 04:47:52.650773'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:47:52.650773', '2023-01-27 04:47:52.650773');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$0TQYI4Oy8HQaa/PNu9FhwOER7j0XlE3mhF8RTMK0iEs4Wow8tnP.O', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:47:52.657051', '2023-01-27 04:47:52.657051'), (135138680, 'admin', '$2a$04$saVV/iElEqklsaWSLGf0FOhbJLLLuFNN69MFwJRvPmX0WdiiTG6.e', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:47:52.657051', '2023-01-27 04:47:52.657051'), (369520569, 'stocker1', '$2a$04$AmvHRJ64a24eaFMNCeNXb.yRjvI.NzEgKVqfyByUUYcWe1fKI1VVS', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:47:52.657051', '2023-01-27 04:47:52.657051'), (252657165, 'stocker2', '$2a$04$G.IcQTUJJBh7pZNtXt4/W.WmdcLQZMStE7cbZ6sbGyn6AXHjVJd0u', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:47:52.657051', '2023-01-27 04:47:52.657051')[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:47:53 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "oQRP63Cp6tA23R9t99v4v1jn"], ["updated_at", "2023-01-27 04:47:53.246596"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2430)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:47:53 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "oQRP63Cp6tA23R9t99v4v1jn"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:47:53 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "oQRP63Cp6tA23R9t99v4v1jn"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:47:53.281259"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:47:53 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "oQRP63Cp6tA23R9t99v4v1jn"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:47:53.310886"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:47:53.313268"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:48:20.309697', '2023-01-27 04:48:20.309697'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:48:20.309697', '2023-01-27 04:48:20.309697'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:48:20.309697', '2023-01-27 04:48:20.309697');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$jpLB6xN.YJFjOwupgRY3ju7pWLDE6sQONtpZ1idWt1AKwu/PJNh8G', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:48:20.314880', '2023-01-27 04:48:20.314880'), (135138680, 'admin', '$2a$04$kKPYogSZtssiZGNZqHrJ0O/fbhRqfkmwmuVPDUw35EZDdzs8u7xT.', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:48:20.314880', '2023-01-27 04:48:20.314880'), (369520569, 'stocker1', '$2a$04$Peqe79aFuXym8F6P12zDG.DNxM0BAJMZnW5xzDGC6rIkv2vcuz8By', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:48:20.314880', '2023-01-27 04:48:20.314880'), (252657165, 'stocker2', '$2a$04$UHeRg6pt2s1EO80/uE4AiuVjVmp.AviZBdBGmfCbDHGAeYJXqGfPu', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:48:20.314880', '2023-01-27 04:48:20.314880')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:48:20 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "1jSFfyq1gTuCLR5AJLBnoP7z"], ["updated_at", "2023-01-27 04:48:20.844902"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2429)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:48:20 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1jSFfyq1gTuCLR5AJLBnoP7z"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 771)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:48:20 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1jSFfyq1gTuCLR5AJLBnoP7z"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:48:20.877707"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:48:20 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1jSFfyq1gTuCLR5AJLBnoP7z"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:48:20.904275"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:48:20.906326"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:49:17.689291', '2023-01-27 04:49:17.689291'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:49:17.689291', '2023-01-27 04:49:17.689291'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:49:17.689291', '2023-01-27 04:49:17.689291');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$cNFkyH8YxDMM5QJX50D5IO4kbBc9EhgqKBPixnX9YV5wDpwvTykcq', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:49:17.695266', '2023-01-27 04:49:17.695266'), (135138680, 'admin', '$2a$04$Z6423QIKu8GI0rIcSLL7t.fkLnie6Mybp5W0og3Xw8zyoC8rFSDOq', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:49:17.695266', '2023-01-27 04:49:17.695266'), (369520569, 'stocker1', '$2a$04$8W35xdKQftXGgvVAo0BZsOlrZzBoL91gncKkhV3A/T/EJBKZaTApu', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:49:17.695266', '2023-01-27 04:49:17.695266'), (252657165, 'stocker2', '$2a$04$w4f81N6A8KoPUQZ/y1wN..iAPhVnvBhKsEDWyYWQOhCb42pfwHRA.', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:49:17.695266', '2023-01-27 04:49:17.695266')[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:49:18 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "883jLGJaBuc1w9BtL6B1uHkC"], ["updated_at", "2023-01-27 04:49:18.242450"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2390)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:49:18 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "883jLGJaBuc1w9BtL6B1uHkC"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:49:18 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "883jLGJaBuc1w9BtL6B1uHkC"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:49:18.274838"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1148)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:49:18 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "883jLGJaBuc1w9BtL6B1uHkC"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:49:18.301737"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:49:18.303865"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:49:33.997655', '2023-01-27 04:49:33.997655'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:49:33.997655', '2023-01-27 04:49:33.997655'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:49:33.997655', '2023-01-27 04:49:33.997655');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$.w.Xqq8ItuiYdRVMrBqrEeAhpXrZs4hHb3rYViC58LQbLAwTCg1wq', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:49:34.001823', '2023-01-27 04:49:34.001823'), (135138680, 'admin', '$2a$04$WJlgMNskyPD2xpJK5ey8GuZNtHLhQJgay0bHlMrPY0.A8FCoIePHy', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:49:34.001823', '2023-01-27 04:49:34.001823'), (369520569, 'stocker1', '$2a$04$7grftG.J09BXpnfR.U3uzuFQ3E7C73YIzVzwqvIaHBbthS9Xrru/e', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:49:34.001823', '2023-01-27 04:49:34.001823'), (252657165, 'stocker2', '$2a$04$j3hiG2toVj5648GLNCcFx.2WN4kZFZfkA39a2HjJYRZrpykaOd99C', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:49:34.001823', '2023-01-27 04:49:34.001823')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:49:34 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "Unp7m75SUDNoBQPK2q85ieVR"], ["updated_at", "2023-01-27 04:49:34.583982"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 2431)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:49:34 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Unp7m75SUDNoBQPK2q85ieVR"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:49:34 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Unp7m75SUDNoBQPK2q85ieVR"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:49:34.616904"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:49:34 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Unp7m75SUDNoBQPK2q85ieVR"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:49:34.643510"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:49:34.645549"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (1.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:50:12.187053', '2023-01-27 04:50:12.187053'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:50:12.187053', '2023-01-27 04:50:12.187053'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:50:12.187053', '2023-01-27 04:50:12.187053');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$CVG8RDoGlkfDwRpcR1YWcOERKyLDF3CpvzjeyCmDvWmdl8jsysdeq', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:50:12.192537', '2023-01-27 04:50:12.192537'), (135138680, 'admin', '$2a$04$mUoLEpoogvnrokcn0qTsMO8AxfoKv0MsFJpsCAY5jdEcXdWRfqKHW', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:50:12.192537', '2023-01-27 04:50:12.192537'), (369520569, 'stocker1', '$2a$04$9r4baejZACswjToSTQhWCOnj4NaL/WeUO8iknWXIziChS6pRQOuXy', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:50:12.192537', '2023-01-27 04:50:12.192537'), (252657165, 'stocker2', '$2a$04$h1hpn5BJDOhExe/UrFWPVuoFHB/RbswfmXGer36dEvRaRYAJaFSb2', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:50:12.192537', '2023-01-27 04:50:12.192537')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:50:12 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "1wxHtf1eRsT8HhN73zuY1knW"], ["updated_at", "2023-01-27 04:50:12.762836"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 2434)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:50:12 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1wxHtf1eRsT8HhN73zuY1knW"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:50:12 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1wxHtf1eRsT8HhN73zuY1knW"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:50:12.813332"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:50:12 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "1wxHtf1eRsT8HhN73zuY1knW"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.3ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:50:12.846183"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:50:12.849406"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 4531)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (1.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:53:35.422400', '2023-01-27 04:53:35.422400'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:53:35.422400', '2023-01-27 04:53:35.422400'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:53:35.422400', '2023-01-27 04:53:35.422400');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$SpRuc0BdP8TrFYe2Cul/XehIY0NG5GUaregbIq0ryH13lUiu2AdKy', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:53:35.428112', '2023-01-27 04:53:35.428112'), (135138680, 'admin', '$2a$04$l0F7YyioK.Yj.xs6bLg1gO1WSUNslQylFUpN/yaY1OLVtgYNbSpdq', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:53:35.428112', '2023-01-27 04:53:35.428112'), (369520569, 'stocker1', '$2a$04$giw0eDpEepCaK6Rm3gdVvuCXBJ5TK7yB1XImt3xaURXRVNyGIdHxq', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:53:35.428112', '2023-01-27 04:53:35.428112'), (252657165, 'stocker2', '$2a$04$5jyN6T75S4JQ2m9R65g/9OeIg/VzV6kgoPkOwMdbhOKJIvWDF/hu2', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:53:35.428112', '2023-01-27 04:53:35.428112')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:53:35 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "zqFCnC1mkiNGoyeYraxehQ2W"], ["updated_at", "2023-01-27 04:53:36.024223"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2431)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:53:36 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "zqFCnC1mkiNGoyeYraxehQ2W"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:53:36 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "zqFCnC1mkiNGoyeYraxehQ2W"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:53:36.057105"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:53:36 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "zqFCnC1mkiNGoyeYraxehQ2W"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:53:36.083483"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:53:36.085518"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+Started GET "/products/890792488" for 127.0.0.1 at 2023-01-27 04:53:38 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"890792488"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 57291)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:53:59.078843', '2023-01-27 04:53:59.078843'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:53:59.078843', '2023-01-27 04:53:59.078843'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:53:59.078843', '2023-01-27 04:53:59.078843');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$rZoZxlqbajRcHinhJXD4ye.ba4DnNxK6OU3mmRd0OuSnUA1IXqSTW', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:53:59.084482', '2023-01-27 04:53:59.084482'), (135138680, 'admin', '$2a$04$ezPnleQ1SKgt6RATYsb1bOEo3UkXtQr6Lqa8w3VyfxwTC7VbsyGjW', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:53:59.084482', '2023-01-27 04:53:59.084482'), (369520569, 'stocker1', '$2a$04$moaHtbiw8h6A.qi7we2aTO60I232DRVFf9nSjeNwGbWv8QdnFDyaW', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:53:59.084482', '2023-01-27 04:53:59.084482'), (252657165, 'stocker2', '$2a$04$oIeeAjlVO6Z.UJCBOcq36.sTB8y06bdOqYBIqgXm2NFKeMsqvigyK', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:53:59.084482', '2023-01-27 04:53:59.084482')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:53:59 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "HY2cz3b2ia4PmkbAGNF22jf5"], ["updated_at", "2023-01-27 04:53:59.624838"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2390)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:53:59 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "HY2cz3b2ia4PmkbAGNF22jf5"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:53:59 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "HY2cz3b2ia4PmkbAGNF22jf5"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:53:59.660566"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1148)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:53:59 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "HY2cz3b2ia4PmkbAGNF22jf5"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:53:59.687755"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:53:59.689786"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 4531)
+Started GET "/products/890792488" for 127.0.0.1 at 2023-01-27 04:54:00 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"890792488"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1288)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:54:20.160564', '2023-01-27 04:54:20.160564'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:54:20.160564', '2023-01-27 04:54:20.160564'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:54:20.160564', '2023-01-27 04:54:20.160564');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$yZL4XVKJhRMnuecLOj1qMeuHpbXjOWJov3cjqc3fYroubrpop.Zne', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:54:20.168545', '2023-01-27 04:54:20.168545'), (135138680, 'admin', '$2a$04$M7F.UemflxS27q29dgJrdesxedhWXDWVzN0neZ9o9DKq/9h0otNoe', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:54:20.168545', '2023-01-27 04:54:20.168545'), (369520569, 'stocker1', '$2a$04$UhfeSlouEC25hb7M2n9wEuaQ38oTRbSecYdyHHb68DKNIQ9iZoc4e', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:20.168545', '2023-01-27 04:54:20.168545'), (252657165, 'stocker2', '$2a$04$L38TYUQp6JTNjfhXfP4SV.ZWcgPiyHyQ2t8EA9mdp/h/hcnI9B3K.', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:20.168545', '2023-01-27 04:54:20.168545')[0m
+  [1m[36mTRANSACTION (89.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+ProductsControllerTest: test_should_buy_product
+-----------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:20 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "8rN9Z9n4vxzQAJojACB5oxbd"], ["updated_at", "2023-01-27 04:54:20.810854"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2430)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:54:20 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "8rN9Z9n4vxzQAJojACB5oxbd"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 768)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:54:20 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "8rN9Z9n4vxzQAJojACB5oxbd"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:54:20.843591"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1127)
+Started POST "/buy" for 127.0.0.1 at 2023-01-27 04:54:20 +0000
+Processing by ProductsController#buy as JSON
+  Parameters: {"amount"=>1, "product_id"=>890792488, "product"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "8rN9Z9n4vxzQAJojACB5oxbd"], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "amount_available" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["amount_available", 4], ["updated_at", "2023-01-27 04:54:20.871037"], ["id", 890792488]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 0], ["updated_at", "2023-01-27 04:54:20.873058"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 4531)
+Started GET "/products/890792488" for 127.0.0.1 at 2023-01-27 04:54:20 +0000
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"890792488"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 890792488], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 465)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:54:26.227017', '2023-01-27 04:54:26.227017'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:54:26.227017', '2023-01-27 04:54:26.227017'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:54:26.227017', '2023-01-27 04:54:26.227017');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$AysXjQFPgzGi4TVp5Ko4merwq2hAShcz/V1A.PXA8uBMztwQKgWMK', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:54:26.231251', '2023-01-27 04:54:26.231251'), (135138680, 'admin', '$2a$04$lKwakLrZdk2Ip6TzNDocW.fNsGdmBJpeQVODBrViBgGpCMYmY2iky', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:54:26.231251', '2023-01-27 04:54:26.231251'), (369520569, 'stocker1', '$2a$04$6hbkZGDZFBuNLpUwqGuN3O52PXMFHz6wNkM8DbL72emVCGspjEYiG', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:26.231251', '2023-01-27 04:54:26.231251'), (252657165, 'stocker2', '$2a$04$imqxZFU7lsRqcyHhtpC.ie5mZwfNv10UJTqacpa.5TkeUnx5FPkam', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:26.231251', '2023-01-27 04:54:26.231251')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+SessionsControllerTest: test_should_login_then_logout
+-----------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:26 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "j2WsX2uYgYR8QKurwKsuSSw2"], ["updated_at", "2023-01-27 04:54:26.756500"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2433)
+Started DELETE "/logout/all" for 127.0.0.1 at 2023-01-27 04:54:26 +0000
+Processing by SessionsController#destroy as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 746758752]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 341)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+SessionsControllerTest: test_should_not_login
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:26 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 2064)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Pluck (0.8ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mUser Pluck (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" WHERE "users"."role" = $1[0m  [["role", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[31mDELETE FROM "products";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "amount_available", "cost", "seller_id", "created_at", "updated_at") VALUES (890792488, 'Mars', 5, 80, 369520569, '2023-01-27 04:54:31.340745', '2023-01-27 04:54:31.340745'), (1044824035, 'Twix', 0, 95, 369520569, '2023-01-27 04:54:31.340745', '2023-01-27 04:54:31.340745'), (209893330, 'Kit Kat', 2, 125, 252657165, '2023-01-27 04:54:31.340745', '2023-01-27 04:54:31.340745');
+INSERT INTO "users" ("id", "username", "password_digest", "email", "role", "deposit", "auth_token", "created_at", "updated_at") VALUES (746758752, 'mingos', '$2a$04$KI.JlCxlvLaX2pw9qgb22evGwlIGoToRzkBrH8LiPCD3Af7oomKyC', 'mingos@mail.com', 1, 10, DEFAULT, '2023-01-27 04:54:31.346547', '2023-01-27 04:54:31.346547'), (135138680, 'admin', '$2a$04$FIkk/EYrHLh5xK8fpScR8.9gglrJgYvy.4eguYcY3XkNtfRojIqDK', 'admin@mail.com', 0, 0, DEFAULT, '2023-01-27 04:54:31.346547', '2023-01-27 04:54:31.346547'), (369520569, 'stocker1', '$2a$04$2BWJQwEuD4..W9N1t7Xy3.mXk0HF9GSvmS1gyZeX/cmpoat4BMwnS', 'stocker1@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:31.346547', '2023-01-27 04:54:31.346547'), (252657165, 'stocker2', '$2a$04$99xj1/r3s1STKZ1.tM0Wh.rkG3m1upe66RygQ1BxZTYNm.sZQXrwW', 'stocker2@mail.com', 2, 0, DEFAULT, '2023-01-27 04:54:31.346547', '2023-01-27 04:54:31.346547')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------
+UsersControllerTest: test_should_create_user_then_logout_then_login_then_show_info
+----------------------------------------------------------------------------------
+Started POST "/users" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Test", "email"=>"test@mail.com", "role"=>"buyer", "deposit"=>0, "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "auth_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Test"], ["password_digest", "[FILTERED]"], ["email", "test@mail.com"], ["auth_token", "9p3gqQ1n7VVPcVDTwnSkCpYL"], ["created_at", "2023-01-27 04:54:31.889195"], ["updated_at", "2023-01-27 04:54:31.889195"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 6944)
+Started DELETE "/logout/all" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by SessionsController#destroy as JSON
+  Parameters: {"username"=>"Test", "password"=>"[FILTERED]", "session"=>{"username"=>"Test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 746758753]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 734)
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"Test", "password"=>"[FILTERED]", "session"=>{"username"=>"Test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Test"], ["id", 746758753], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@mail.com"], ["id", 746758753], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "oSr5QmhbbM5rUx4JgWzTFoDs"], ["updated_at", "2023-01-27 04:54:31.921138"], ["id", 746758753]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1134)
+Started GET "/profile" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by UsersController#profile as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "oSr5QmhbbM5rUx4JgWzTFoDs"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 396)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------
+UsersControllerTest: test_as_normal_user_should_not_show_info_about_users
+-------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "DgUy7i3dQyTVEcJF6NM3gBw5"], ["updated_at", "2023-01-27 04:54:31.946490"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 986)
+Started GET "/users" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "DgUy7i3dQyTVEcJF6NM3gBw5"], ["LIMIT", 1]]
+Filter chain halted as :check_if_admin rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 243)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------
+UsersControllerTest: test_should_not_update_user_email
+------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "ALDHGwSJGGB7rugnmw1ZeR9Q"], ["updated_at", "2023-01-27 04:54:31.967367"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 986)
+Started PUT "/user" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by UsersController#update as JSON
+  Parameters: {"email"=>"admin@mail.com", "user"=>{"email"=>"admin@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ALDHGwSJGGB7rugnmw1ZeR9Q"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 400 Bad Request in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 3350)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+UsersControllerTest: test_as_admin_should_delete_user
+-----------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "R3YJpQ1SDZ7m46MZMjymhgA9"], ["updated_at", "2023-01-27 04:54:31.993366"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 985)
+Started DELETE "/users/746758752" for 127.0.0.1 at 2023-01-27 04:54:31 +0000
+Processing by UsersController#destroy as JSON
+  Parameters: {"id"=>"746758752", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "R3YJpQ1SDZ7m46MZMjymhgA9"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 719)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersControllerTest: test_should_not_post_deposit
+-------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "o84VVTKi5CJLWHzCD7zjrm94"], ["updated_at", "2023-01-27 04:54:32.014734"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 986)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>60, "user"=>{"deposit"=>60}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "o84VVTKi5CJLWHzCD7zjrm94"], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 251)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UsersControllerTest: test_as_admin_should_show_info_about_users
+---------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135138680], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "admin"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@mail.com"], ["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "UMNbrqxxYXezWLa6bok7y9Gz"], ["updated_at", "2023-01-27 04:54:32.035513"], ["id", 135138680]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 984)
+Started GET "/users" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by UsersController#index as JSON
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "UMNbrqxxYXezWLa6bok7y9Gz"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 748)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 369520569], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 252657165], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_post_deposit
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "ZEack3xXcFaqxcMW8xkc3pPD"], ["updated_at", "2023-01-27 04:54:32.058738"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 967)
+Started POST "/deposit" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by UsersController#deposit as JSON
+  Parameters: {"deposit"=>100, "user"=>{"deposit"=>100}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ZEack3xXcFaqxcMW8xkc3pPD"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "deposit" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["deposit", 110], ["updated_at", "2023-01-27 04:54:32.068813"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 999)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+UsersControllerTest: test_should_update_user_email
+--------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 746758752], ["LIMIT", 1]]
+Started POST "/login" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by SessionsController#create as JSON
+  Parameters: {"username"=>"mingos", "password"=>"[FILTERED]", "session"=>{"username"=>"mingos", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "mingos"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mingos@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "Z4L1fBQ8KPgiHucq8hxQ1XQc"], ["updated_at", "2023-01-27 04:54:32.080863"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 986)
+Started PUT "/user" for 127.0.0.1 at 2023-01-27 04:54:32 +0000
+Processing by UsersController#update as JSON
+  Parameters: {"email"=>"test_use_case@mail.com", "user"=>{"email"=>"test_use_case@mail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Z4L1fBQ8KPgiHucq8hxQ1XQc"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "mingos"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test_use_case@mail.com"], ["id", 746758752], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "test_use_case@mail.com"], ["updated_at", "2023-01-27 04:54:32.091287"], ["id", 746758752]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1031)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m

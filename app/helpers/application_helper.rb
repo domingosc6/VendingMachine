@@ -6,6 +6,7 @@ module ApplicationHelper
         coins = []
         if change.positive?
             change_aux = change
+
             while change_aux.positive?
                 CoinsToUse.reverse.each do |coin|
                     unless (change_aux - coin).negative?
@@ -15,6 +16,7 @@ module ApplicationHelper
                     end
                 end
             end
+            
         end
         coins
     end
