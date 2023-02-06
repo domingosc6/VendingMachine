@@ -44,7 +44,7 @@ class ProductsController < ApiController
 
   def destroy
     if @product.destroy
-        render json: { message: "User with id #{params[:id]} destroyed succesfully" }
+        render json: { message: "Product with id #{params[:id]} destroyed succesfully" }
     else
         render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
     end
@@ -89,7 +89,7 @@ class ProductsController < ApiController
   end
 
   def check_if_seller_from_product
-    render_error('Access Denied for this Product') unless @product.seller.id == @user.id
+    render_error('Access Denied for this Product') unless @product.seller.id == @user.id || @user.admin?
   end
 
 end
