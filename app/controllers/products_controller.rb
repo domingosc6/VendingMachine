@@ -10,10 +10,10 @@ class ProductsController < ApiController
   def index
     json_array = []
     if Product.any?
-        Product.all.order(:id).each do |product|
-            json_array << product.product_in_json
-        end
-        render json: json_array
+      Product.all.order(:id).each do |product|
+        json_array << product.product_in_json
+      end
+      render json: json_array
     else
       render_error('There aren\'t products in the database.')
     end
@@ -44,12 +44,12 @@ class ProductsController < ApiController
 
   def destroy
     if @product.destroy
-        render json: { message: "Product with id #{params[:id]} destroyed succesfully" }
+      render json: { message: "Product with id #{params[:id]} destroyed succesfully" }
     else
-        render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
+      render_error(@product.errors.to_a.to_sentence(last_word_connector: ' and '))
     end
   end
-  
+
   def buy
     if params[:amount].to_s === params[:amount].to_i.to_s
       amount = Integer(params[:amount])
@@ -67,14 +67,14 @@ class ProductsController < ApiController
         change_array = get_change_in_coins(change)
         render json: {change: change_array}
       end
-      
+
     else
       render_error('Incorrect amount')
     end
   end
 
   private
-  
+
   def set_product
     product_id = params[:id] || params[:product_id]
     @product = Product.find(product_id)
